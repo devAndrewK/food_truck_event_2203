@@ -59,6 +59,12 @@ RSpec.describe Event do
       [@item2, @item4, @item1, @item3])
   end
 
-
+  it 'can identify overstocked items' do
+    @food_truck3.stock(@item3, 10)
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expect(@event.overstocked_items).to eq(@item1)
+  end
 
 end
