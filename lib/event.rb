@@ -18,5 +18,4 @@ class Event
     @food_trucks.find_all { |food_truck| food_truck.check_stock(item) != 0 }
   end
 
-
 end
