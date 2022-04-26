@@ -23,9 +23,9 @@ RSpec.describe Event do
   end
 
   it 'can add food trucks' do
-    @vent.add_food_truck(@food_truck1)
-    @vent.add_food_truck(@food_truck2)
-    @vent.add_food_truck(@food_truck3)
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
     expect(@event.food_trucks).to eq([@food_truck1, @food_truck2, @food_truck3])
   end
 
