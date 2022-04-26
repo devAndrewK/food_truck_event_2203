@@ -18,4 +18,9 @@ class Event
     @food_trucks.find_all { |food_truck| food_truck.check_stock(item) != 0 }
   end
 
+  def sorted_item_list
+    @food_trucks.flat_map { |food_truck|
+      food_truck.inventory.keys  }.uniq.sort_by{|item| item.name}
+  end
+
 end
