@@ -67,4 +67,30 @@ RSpec.describe Event do
     expect(@event.overstocked_items).to eq(@item1)
   end
 
+  it 'can return total_inventory' do
+    @food_truck3.stock(@item3, 10)
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expected = {
+      @item1 => {
+        quantity: 100,
+        food_trucks: [@food_truck1, @food_truck3]
+      },
+      @item2 => {
+        quantity: 7,
+        food_trucks: [@food_truck1]
+      },
+      @item4 => {
+        quantity: 50,
+        food_trucks: [@food_truck2]
+      },
+      @item3 => {
+        quantity: 35,
+        food_trucks: [@food_truck2, @food_truck3]
+      },
+    }
+    expect(@event.total_inventory).to eq(expected)
+  end
+
 end
