@@ -52,4 +52,5 @@ RSpec.describe Event do
 
 
 
+
 end
