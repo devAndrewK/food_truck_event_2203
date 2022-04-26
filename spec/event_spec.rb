@@ -50,6 +50,14 @@ RSpec.describe Event do
       [@food_truck1, @food_truck3])
   end
 
+  it 'can sort items' do
+    @food_truck3.stock(@item3, 10)
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
+    expect(@event.sorted_item_list).to eq(
+      [@item2, @item4, @item1, @item3])
+  end
 
 
 
