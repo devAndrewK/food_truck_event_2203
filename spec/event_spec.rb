@@ -16,7 +16,7 @@ RSpec.describe Event do
   end
 
   it 'has attributes' do
-    expect(@event.name).to eq("South Pearl Street Farmers Markey")
+    expect(@event.name).to eq("South Pearl Street Farmers Market")
     expect(@event.food_trucks).to eq([])
   end
 
